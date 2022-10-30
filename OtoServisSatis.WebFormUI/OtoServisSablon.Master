@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="OtoServisSablon.master.cs" Inherits="OtoServisSatis.WebFormUI.OtoServisSablon" %>
+
+<%@ Register Src="~/Menu.ascx" TagPrefix="uc1" TagName="Menu" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style>
+        #menu { margin-right: 3em; border: 1px solid #ddd; padding: 0; }
+            #menu li { list-style: none; line-height: 30px; border-bottom: 1px solid #ddd; padding: 0 1rem; }
+                #menu li:last-child { border-bottom: none; }
+                #menu li:hover { background-color: gainsboro; }
+                #menu li a { text-decoration: none; color: dimgray; }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%-- js ile ilgili gelen değerlerin çalışmasını sağlar  --%>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <table>
+            <tr>
+                <td style="vertical-align:top">
+                    <%-- user kontrol oluşturularak partial view gibi üst menü kısmı getirildi --%>
+                    <uc1:Menu runat="server" ID="Menu" />
+                </td>
+                <td>
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+
+
+    </form>
+</body>
+</html>
